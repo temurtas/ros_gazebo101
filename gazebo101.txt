@@ -30,6 +30,12 @@ colcon build
 
 ros2 launch my_teleop teleop_kobra.launch.py
 
+ros2 launch my_teleop teleop_kobra_mk5.launch.py
+ros2 launch my_teleop teleop_kobra_mk5_city.launch.py
+
+%% - Save them all
+rm -rf ~/kobra_mk2_ws/bag_files/gazebo_data ; . ~/kobra_mk2_ws/install/setup.bash ; ros2 bag record -o ~/kobra_mk2_ws/bag_files/gazebo_data /imu_plugin/out /gps/data
+
 ros2 run my_teleop my_teleop
 rqt_graph
 ros2 topic echo kobra_mk2/cmd_vel
@@ -51,6 +57,9 @@ colcon build
 . install/setup.bash
 
 ros2 launch ht_strap_package ht_strap_package.launch.py	% All Nodes
+
+ros2 launch ht_strap_package ht_gazebo_strap_package.launch.py	
+ros2 launch ht_strap_package ht_gazebo_package.launch.py	
 
 ros2 launch ht_strap_package ht_only_strap_package.launch.py	% Only Strap Node w/ IMU talker and listener
 ros2 launch ht_strap_package ht_strap_only_ins_gps.launch.py	% Only computational nodes, w/out Talkers
