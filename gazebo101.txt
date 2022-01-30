@@ -56,6 +56,8 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 colcon build
 . install/setup.bash
 
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/build/gazebo_plugins
+
 ros2 launch ht_strap_package ht_strap_package.launch.py	% All Nodes
 
 ros2 launch ht_strap_package ht_gazebo_strap_package.launch.py	
