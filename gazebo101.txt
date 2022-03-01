@@ -57,6 +57,7 @@ colcon build
 . install/setup.bash
 
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/build/gazebo_plugins
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/src/gazebo_ros_pkgs/build/gazebo_plugins
 
 ros2 launch ht_strap_package ht_strap_package.launch.py	% All Nodes
 
@@ -72,7 +73,16 @@ rm -rf ~/INS-GPS-ROS2/imu_strap_data_only ; . ~/INS-GPS-ROS2/install/setup.bash 
 %% - Cyclone DDS boot config 
 CYCLONEDDS_URI=file:///boot/cyclonedds_config.xml
 
-%% Start MATLAB at Ubuntu
+%% -
+cd ~/ws/src/gazebo_ros_pkgs
+colcon build --packages-select gazebo_plugins
+
+
+%% Start MATLAB at Ubuntu (w/ root as user)
+cd /usr/local/MATLAB/R2021b/bin
+sudo su 
+sudo ./matlab
+
 cd MATLAB/R2021b/bin; ./matlab
 
 %% -

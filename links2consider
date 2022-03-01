@@ -1,0 +1,24 @@
+
+
+
+Ackermannsteer : 
+	https://github.com/froohoo/ackermansteer/tree/master/ackermansteer/src
+
+?? : 
+	https://github.com/chrissunny94/ackerman_ros_robot_gazebo_simulation/blob/master/rbcar_common/rbcar_description/urdf/bases/rbcar_base.urdf.xacro
+
+?? : 
+	https://github.com/robustify/audibot/blob/master/audibot_description/urdf/audibot.urdf.xacro
+
+PriusChallange : https://www.openrobotics.org/customer-stories/prius-challenge 
+Car Demo : where I get the new town and models
+	https://github.com/osrf/car_demo/tree/master/car_demo/models/gas_station/materials/textures
+	
+GazeboRosIMUSensor:
+	https://github.com/ros-simulation/gazebo_ros_pkgs/blob/noetic-devel/gazebo_plugins/src/gazebo_ros_imu_sensor.cpp
+	
+GazeboRosImu:
+	https://github.com/ros-simulation/gazebo_ros_pkgs/blob/noetic-devel/gazebo_plugins/src/gazebo_ros_imu.cpp
+	
+HectorImu:
+	https://github.com/tu-darmstadt-ros-pkg/hector_gazebo/blob/melodic-devel/hector_gazebo_plugins/src/gazebo_ros_imu.cpp
