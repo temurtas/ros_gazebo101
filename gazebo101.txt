@@ -79,11 +79,11 @@ colcon build --packages-select gazebo_plugins
 
 
 %% Start MATLAB at Ubuntu (w/ root as user)
-cd /usr/local/MATLAB/R2021b/bin
-sudo su 
-sudo ./matlab
+% cd /usr/local/MATLAB/R2021b/bin
+% sudo su 
+% sudo ./matlab
 
-cd MATLAB/R2021b/bin; ./matlab
+cd MATLAB/R2022a/bin; ./matlab
 
 %% -
 %% clear nodes and gzservers
