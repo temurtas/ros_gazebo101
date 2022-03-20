@@ -64,6 +64,8 @@ ros2 launch ht_strap_package ht_strap_package.launch.py	% All Nodes
 ros2 launch ht_strap_package ht_gazebo_strap_package.launch.py	
 ros2 launch ht_strap_package ht_gazebo_package.launch.py	
 
+RMW_IMPLEMENTATION=rmw_cyclonedds_cpp ros2 launch ht_strap_package ht_gazebo_package.launch.py
+
 ros2 launch ht_strap_package ht_only_strap_package.launch.py	% Only Strap Node w/ IMU talker and listener
 ros2 launch ht_strap_package ht_strap_only_ins_gps.launch.py	% Only computational nodes, w/out Talkers
 
