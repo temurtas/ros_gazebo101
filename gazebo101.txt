@@ -54,6 +54,7 @@ cd ~/INS-GPS-ROS2
 rosdep install -i --from-path src --rosdistro foxy -y
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 colcon build
+colcon build --allow-overriding ht_nav_variables ht_strap_package
 . install/setup.bash
 
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/build/gazebo_plugins
@@ -77,7 +78,7 @@ CYCLONEDDS_URI=file:///boot/cyclonedds_config.xml
 
 %% -
 cd ~/ws/src/gazebo_ros_pkgs
-colcon build --packages-select gazebo_plugins
+colcon build --packages-select gazebo_plugins --allow-overriding gazebo_plugins
 
 
 %% Start MATLAB at Ubuntu (w/ root as user)
