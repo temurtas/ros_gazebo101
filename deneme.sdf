@@ -1,0 +1,92 @@
+<link name="front_left_wheel">
+      <pose>0.76 -1.41 0.31265 0 0 0</pose>
+      <inertial>
+        <mass>11</mass>
+        <inertia>
+          <ixx>0.58631238</ixx>
+          <ixy>0.0</ixy>
+          <iyy>0.33552910</iyy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+          <izz>0.33552910</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="front_left_wheel_visual">
+        <pose>0.04 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://prius_hybrid/meshes/Hybrid.obj</uri>
+            <scale>0.01 0.01 0.01</scale>
+            <submesh>
+              <name>Wheel_Front_Left_</name>
+              <center>true</center>
+            </submesh>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="front_left_wheel_collision">
+        <pose>0.0 0.0 0.0 0 1.5707963267948966 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.31265</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <min_depth>0.001</min_depth>
+              <kp>1e-9</kp>
+            </ode>
+          </contact>
+        </surface>
+
+      </collision>
+      
+    <sensor name="fl_bumper_plugin" type="contact">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <contact>
+        <collision>front_left_wheel_collision</collision>
+      </contact>
+      <plugin name="fl_bumper_plugin" filename="libgazebo_ros_bumper.so">
+        <ros>
+          <namespace>kobra_mk5</namespace>
+          <remapping>bumper_states:=front_left_contact_forces</remapping>
+        </ros>
+        <bumperTopicName>bumper_topic</bumperTopicName>
+        <frameName>front_left_wheel</frameName>
+      </plugin>
+    </sensor>
+    </link>
+
+     <joint type="universal" name="front_left_combined_joint">
+      <!-- <pose>0 0 0 -0.08726646259971647 0 0</pose> -->
+      <!-- <pose>0.76 -1.41 0.31265 0 0 0</pose> -->
+      <pose>0 0 0 0 0 0</pose>
+      <child>front_left_wheel</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- +- 50 degrees -->
+          <lower>-0.8727</lower>
+          <upper>0.8727</upper>
+        </limit>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <friction>18.0474092253</friction>
+        </dynamics>
+      </axis2>
+    </joint>

@@ -59,6 +59,7 @@ colcon build --allow-overriding ht_nav_variables ht_strap_package
 
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/build/gazebo_plugins
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/src/gazebo_ros_pkgs/build/gazebo_plugins
+export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_wheel_slip_plugin/build
 
 ros2 launch ht_strap_package ht_strap_package.launch.py	% All Nodes
 
