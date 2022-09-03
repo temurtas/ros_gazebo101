@@ -4,16 +4,21 @@ Things and scripts to remember
 %% ----------------------------
 %% Start HT_Nav_Packages
 %% ----------------------------
+source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "folder_name" t_sim_min #MC
+
+source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "scn_1_deneme" 1 1
+%% ---------
 cd ~/INS-GPS-ROS2
 rosdep install -i --from-path src --rosdistro foxy -y
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-colcon build
-colcon build --allow-overriding ht_nav_variables ht_strap_package
-. install/setup.bash
 
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/build/gazebo_plugins
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/ws/src/gazebo_ros_pkgs/build/gazebo_plugins
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_wheel_slip_plugin/build
+
+colcon build
+colcon build --allow-overriding ht_nav_variables ht_strap_package
+. install/setup.bash
 
 ros2 launch ht_strap_package ht_strap_package.launch.py	% All Nodes
 
