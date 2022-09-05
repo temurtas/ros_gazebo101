@@ -6,9 +6,9 @@ Things and scripts to remember
 %% ----------------------------
 source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "folder_name" t_sim_min #MC
 
-source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "scn_2_5" 1 5
+source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "scn_1_10" 2 10
 
-source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "scn_1_100" 4 100
+source ~/INS-GPS-ROS2/bash_gazebo_sim_mc_run.sh "scn_1_100_3" 4 100
 %% ---------
 cd ~/INS-GPS-ROS2
 rosdep install -i --from-path src --rosdistro foxy -y

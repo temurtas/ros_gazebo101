@@ -11,3 +11,5 @@ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:~/gazebo_wheel_slip_plugin/build
 colcon build --allow-overriding ht_nav_variables ht_strap_package
 
 . install/setup.bash
+
+killall -9 gzserver gzclient
